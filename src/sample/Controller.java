@@ -3,9 +3,22 @@ package sample;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
+import java.io.IOException;
+
 public class Controller {
     @FXML
     Label lblDisplay;
+    public Controller() throws IOException {
+    }
+    private Counter counter = new Counter();
+
+    public void initialize(){
+        setLblDisplay();
+    }
+
+    private void setLblDisplay() {
+        this.lblDisplay.setText(String.valueOf(counter.getCalory()));
+    }
 
     //Пока заглушки реализация потом
     public void setCalory() {
