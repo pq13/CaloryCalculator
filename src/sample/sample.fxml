@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="387.0" prefWidth="309.0" xmlns="http://javafx.com/javafx/8.0.66" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="387.0" prefWidth="309.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
       <Label fx:id="lblDisplay" alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefHeight="92.0" text="Label" textAlignment="CENTER">
          <font>
@@ -15,7 +15,7 @@
          </font>
       </Label>
       <Separator prefHeight="15.0" />
-      <TextField />
+      <TextField fx:id="txtField" />
       <Separator prefHeight="15.0" />
       <Button fx:id="btnSet" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#setCalory" prefHeight="50.0" text="Установить калории" />
       <Button fx:id="btnAdd" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#addCalory" prefHeight="50.0" text="Добавить калории" />

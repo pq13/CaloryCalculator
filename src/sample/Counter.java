@@ -11,7 +11,7 @@ public class Counter {
     private BufferedReader bufferedReader;
 
     Counter() throws IOException {
-        this.calory = 0;
+
         try {
             fileReader = new FileReader("data.txt");
             System.out.println("файл найден");
@@ -26,22 +26,33 @@ public class Counter {
             fileWriter = new FileWriter("data.txt");
             fileWriter.write("0");
             fileWriter.close();
-            System.out.println("Херак 0 в файл");
+            System.out.println("Херак 0 в файл и calory 0");
+            this.calory = 0;
+        } catch (NumberFormatException e) {
+            System.out.println("Какая то херь в файле. Запишу в него нулину");
+            fileWriter = new FileWriter("data.txt");
+            fileWriter.write("0");
+            fileWriter.close();
+            this.calory = 0;
         }
+
     }
 
     public void setCalory(int calory) {
         this.calory = calory;
+
     }
 
     int getCalory() {
         return calory;
     }
 
-    //Помещаем данные в файл для сохранности
+    //Помещаем данные о текущих калориях в файл для сохранности
     public void saveCalory() {
         try {
-            fileWriter.write(calory);
+            fileWriter = new FileWriter("data.txt");
+            fileWriter.write(String.valueOf(calory));
+            fileWriter.close();
         } catch (IOException e) {
             System.out.println("Не смог сохранить данные в файл");
             e.printStackTrace();
