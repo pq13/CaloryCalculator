@@ -41,17 +41,37 @@ public class Controller {
         System.out.println("Сохранили в файл");
 
     }
-
+    //Добавляет количество калорий указанное в textField
     public void addCalory() {
         System.out.println("Нажата кнопка добавить калории");
-
+        try {
+            int a = Integer.parseInt(txtField.getText());
+            counter.setCalory(counter.getCalory() + a);
+            setLblDisplay();
+            counter.saveCalory();
+        } catch (NumberFormatException ex) {
+            System.out.println("Пустая строка. Введи число!");
+        }
     }
 
+    //Вычитает количество калорий указанное в textField
     public void deleteCalory() {
         System.out.println("Нажата кнопка удалить калории");
+        try {
+            int a = Integer.parseInt(txtField.getText());
+            counter.setCalory(counter.getCalory() - a);
+            setLblDisplay();
+            counter.saveCalory();
+        } catch (NumberFormatException ex) {
+            System.out.println("Пустая строка. Введи число!");
+        }
     }
 
+    //Счётчики устанавливает в ноль
     public void purgeCalory() {
         System.out.println("Нажата кнопка стереть всё");
+        counter.setCalory(0);
+        setLblDisplay();
+        counter.saveCalory();
     }
 }
